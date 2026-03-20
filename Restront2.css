@@ -1,0 +1,372 @@
+/* خطوط وألوان */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo', sans-serif; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color:#1a1a1a;
+  color:#f5f5dc;
+  line-height:1.6;
+}
+
+/* Split Screen Header بدون زر */
+.split-header {
+  display:flex;
+  height:100vh;
+}
+
+.left-side, .right-side {
+  flex:1;
+  position:relative;
+}
+
+.left-side img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter: brightness(70%);
+}
+
+.right-side {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:50px;
+  background: linear-gradient(90deg, rgba(26,26,26,0.9), rgba(26,26,26,0.8));
+}
+
+.right-side h1 {
+  font-size:3.5rem;
+  color:#d4af37;
+  margin-bottom:20px;
+}
+
+.right-side p {
+  font-size:1.3rem;
+  color:#f5f5dc;
+  margin-bottom:30px;
+}
+
+nav ul {
+  list-style:none;
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+nav ul li a {
+  color:#f5f5dc;
+  font-weight:bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover { color:#d4af37;
+}
+
+/* الأقسام */
+.section-content {
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-content h2 {
+  text-align:center;
+  color:#d4af37;
+  margin-bottom:40px;
+}
+
+/* قائمة الطعام */
+.menu {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:30px;
+  align-items: flex-start;
+}
+
+.menu-item {
+  background-color:#111;
+  border:2px solid #d4af37;
+  border-radius:15px;
+  overflow:hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+  align-items: flex-start;
+}
+
+.menu-item:hover {
+  transform: translateY(-10px);
+  box-shadow:0 10px 20px rgba(212,175,55,0.5);
+}
+
+.menu-item img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.menu-item h3 {
+  color:#d4af37;
+  padding:15px;
+}
+
+.menu-item p {
+  padding:0 15px 15px;
+  color:#f5f5dc;
+}
+
+/* أزرار واتس فقط */
+.btn {
+  display:inline-block;
+  padding:12px 25px;
+  background-color:#25D366;
+  color:white;
+  border-radius:5px;
+  font-weight:bold;
+  transition: all 0.3s ease;
+  margin:20px;
+  will-change: transform;
+  text-decoration: none;
+  
+}
+
+.btn:hover {
+  background-color:#d4af37;
+  color:#111;
+  transform: scale(1.05);
+}
+
+/* تواصل معنا */
+#contact { text-align:center;
+
+will-change: transform;
+}
+
+/* الفوتر */
+footer {
+  text-align:center;
+  padding:20px;
+  border-top:2px solid #d4af37;
+  margin-top:50px;
+  color:#f5f5dc;
+  will-change: transform;
+}
+
+footer span { 
+  font-weight:bold;
+  color:#d4af37;
+}
+
+footer .designer {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+  color: #ff3c00;
+}
+
+footer .designer:hover {
+  color: #ffc107; /* لمعة ذهبية عند hover */
+  text-shadow: 0 0 10px #ffc107, 0 0 20px #ff3c00;
+  transform: scale(1.05);
+}
+
+
+/* Responsive */
+@media (max-width:992px) {
+  .split-header { flex-direction:column; height:auto; }
+  .left-side, .right-side { width:100%; height:50vh; }
+  .right-side { align-items:center; text-align:center; padding:30px; }
+  .right-side h1 { font-size:2.5rem; }
+  .right-side p { font-size:1rem; }
+}
+
+.section-content,
+.menu-card,
+.menu-item{
+opacity:0;
+transform:translateY(40px);
+transition:0.7s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+
+.lazy {
+  background: #f0f0f0;  /* لون خفيف أثناء التحميل */
+  min-height: 200px;     /* ارتفاع افتراضي قبل تحميل الصورة */
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ===== Menu Page ===== */
+
+.menu-header{
+
+background:#111;
+color:white;
+padding:30px;
+text-align:center;
+
+}
+
+.back-btn{
+
+display:inline-block;
+margin-top:10px;
+color:#ff3c00;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+.menu-page{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+
+}
+
+.menu-card{
+
+background:#111;
+border-radius:10px;
+border:2px solid #d4af37;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+will-change: transform;
+}
+.menu-card img{
+
+width:100%;
+height:180px;
+object-fit:cover;
+
+}
+
+.menu-card h3{
+color: #d4af37;
+margin:10px;
+
+}
+.menu-card p{
+color:white;
+padding:0 10px;
+}
+
+.price{
+
+display:block;
+margin:15px;
+font-weight:bold;
+color:#ff3c00;
+
+}
+
+
+.menu-item a{
+text-decoration: none;
+color: inherit;
+}
+.menu-item{
+  overflow: hidden; /* يمنع الصورة من الخروج خارج الكارت */
+}
+
+.menu-item img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.menu-item:hover img{
+  transform: scale(1.1);
+}
+
+
+
+/* ===== صفحة تفاصيل الطبق ===== */
+
+/* ===== Dish Page Simple ===== */
+
+.dish-details{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+}
+
+.dish-details img{
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.dish-details h2{
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #d4af37;
+}
+
+.dish-details p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.dish-details .price{
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.dish-details .btn{
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Back button */
+.back-btn{
+  display: inline-block;
+  margin: 20px;
+  padding: 8px 18px;
+  background: #ff3c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* اجعل الرابط يغطي الكارت كله بدون تأثير على التصميم */
+.menu-card{
+  position: relative;
+}
+
+.menu-card .card-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  text-indent: -9999px; /* لإخفاء النص داخل الرابط */
+}
